@@ -1,4 +1,4 @@
-﻿namespace Uno;
+namespace Uno;
 
 public enum CardType
 {
@@ -20,8 +20,6 @@ public class Card
     {
         return true;
     }
-
-
     public override string ToString()
     {
         return $"{Color} {Number}";

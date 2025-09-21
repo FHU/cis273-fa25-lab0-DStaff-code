@@ -1,4 +1,6 @@
-﻿namespace Vector;
+﻿using System.Security.Cryptography.X509Certificates;
+
+namespace Vector;
 
 public struct Vector
 {
@@ -6,15 +8,32 @@ public struct Vector
 
     public double Y { get; set; }
 
-    public double Magnitude { get; }
+    public Vector(double x, double y)
+    {
+        X = x;
+        Y = y;
+    }
 
-    public double Direction { get; }
+    // public double Magnitude
+    // {
+    //     get
+    //     {
+    //         return Math.Sqrt(X*X+Y*Y);
+    //     }
+    // }
 
+    public double Magnitude => Math.Sqrt(X * X + Y * Y);
+
+    public double Direction => Math.Atan2(Y, X)*180/Math.PI;
 
     // Instance methods 
     public Vector Add(Vector v)
     {
-        return default;
+        // Vector result = new Vector();
+        // result.X = this.X + v.X;
+        // result.Y = this.Y + v.Y;
+
+        return new Vector(this.X + v.X, this.Y + v.Y);
     }
     public Vector Subtract(Vector v)
     {
@@ -41,13 +60,13 @@ public struct Vector
 
     public Vector Normalize()
     {
-        return default;
+        return Divide(Magnitude);
     }
 
     // Class (static) methods 
     public static Vector Add(Vector v1, Vector v2)
     {
-        return default;
+        return v1.Add(v2);
     }
 
     public static Vector Subtract(Vector v1, Vector v2)
@@ -83,7 +102,7 @@ public struct Vector
     // Overloaded operators 
     public static Vector operator +(Vector v1, Vector v2)
     {
-        return default;
+        return Add(v1, v2);
     }
 
     public static Vector operator -(Vector v1, Vector v2)
