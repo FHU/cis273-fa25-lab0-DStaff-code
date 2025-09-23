@@ -9,11 +9,11 @@ public class Prayer
     public string Subtitle { get; set; } = "";
     public string Body { get; set; } = "";
 
-    public List<ScriptureReference> ScriptureReferences { get; set; } = new List<ScriptureReference>();
+    public List<ScriptureReference> ScriptureReferences { get; set; } = new();
 
     public Author Author { get; set; } = new();
 
-    public List<Tag> Tags { get; set; } = new List<Tag>();
+    public List<Tag> Tags { get; set; } = new();
 
     public Uri? ImageURL { get; set; }
 

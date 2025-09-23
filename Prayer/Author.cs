@@ -6,5 +6,4 @@ public class Author
     public string LastName { get; set; } = "";
     
     public string? Email { get; set; }
-    // ? means it can be nullable ((Optional))
 }
