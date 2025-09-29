@@ -7,4 +7,9 @@ public class UnoGame
     public List<Card> DiscardStack { get; set; } = new List<Card>();
     public Color CurrentColor { get; set; }
 
+    public void StartGame()
+    {
+        // Example: shuffle deck, deal cards, etc.
+        Console.WriteLine("Game starting with " + Players.Count + " players!");
+    }
 }
